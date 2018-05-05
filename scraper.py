@@ -36,3 +36,9 @@ soup = BeautifulSoup(page.content, 'html.parser')
 current_agenda = soup.find_all('tr', id_='11,493,0')
 link = current_agenda.find_all('a')
 print(link)
+
+header = soup.find('h2', text="Current Agenda")
+agenda_table = header.find_next_siblings()
+for line in agenda_table:
+for row in line.find_all('a'):
+print row
