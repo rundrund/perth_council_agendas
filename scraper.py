@@ -33,10 +33,6 @@ page = requests.get("https://www.stirling.wa.gov.au/Council/Meetings/Council%20m
 soup = BeautifulSoup(page.content, 'html.parser')
 
 #navigate to the current agenda
-current_agenda = soup.find_all('tr', id_='11,493,0')
-link = current_agenda.find_all('a')
-print(link)
-
 header = soup.find('h2', text="Current Agenda")
 agenda_table = header.find_next_siblings()
 for line in agenda_table:
