@@ -22,3 +22,15 @@
 # All that matters is that your final data is written to an SQLite database
 # called "data.sqlite" in the current working directory which has at least a table
 # called "data".
+
+#import libraries
+import urllib2
+from bs4 import BeautifulSoup
+
+#define the page where the agendas are contained. Parse the html in the 'page' variable, and store it in Beautiful Soup format
+page = requests.get("https://www.stirling.wa.gov.au/Council/Meetings/Council%20meetings%20and%20petitions/Pages/Council-Meeting-Agenda-and-Minutes.aspx")
+soup = BeautifulSoup(page.content, 'html.parser')
+
+#navigate to the current agenda
+current_agenda = soup.selectl("tr.11,493,0 a")
+print(current_agenda.prettify())
