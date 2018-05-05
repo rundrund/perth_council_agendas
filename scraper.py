@@ -33,7 +33,7 @@ page = requests.get("https://www.stirling.wa.gov.au/Council/Meetings/Council%20m
 soup = BeautifulSoup(page.content, 'html.parser')
 
 #navigate to the current agenda
-header = soup.find_all('h2')
+header = soup.find_all('a.ms-listlink')
 #agenda_table = header.find_next_siblings()
 #for line in agenda_table:
 #  for row in line.find_all('a'):
