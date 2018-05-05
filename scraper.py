@@ -34,7 +34,7 @@ soup = BeautifulSoup(page.content, 'html.parser')
 
 #navigate to the current agenda
 header = soup.find('h2', text="Current Agenda")
-agenda_table = header.find_next_siblings()
-for line in agenda_table:
-  for row in line.find_all('a'):
-    print row
+#agenda_table = header.find_next_siblings()
+#for line in agenda_table:
+#  for row in line.find_all('a'):
+print header
